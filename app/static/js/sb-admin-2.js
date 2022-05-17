@@ -54,3 +54,8 @@
   });
 
 })(jQuery); // End of use strict
+
+$('li > nav-item').click(function() {
+  $('li').removeClass();
+  $(this).parent().addClass('active');
+});

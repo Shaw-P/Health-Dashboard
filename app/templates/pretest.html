@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include "head_part.html" %}
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        
+                        <table class="table text-gray-900">
+                            <h1 class="h1 text-gray-900 mt-5 mb-5 text-center">醫療平台意願調查</h1>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">1. 您的睡眠狀況如何?</td>
+                                <td width="300">
+                                <div class="radio-toolbar">
+                                    <input class="never" type="radio" id="Q1_1" name="Q1" value="0">
+                                    <label for="Q1_1">我覺得不錯</label>
+                                </div>
+                                </td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="sever" type="radio" id="Q1_2" name="Q1" value="1">
+                                    <label for="Q1_2">我覺得不太好</label>
+                                  </div>
+                                </td>
+                                
+                            
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">2. 與您同床者是否反應過你會打鼾?</td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="never" type="radio" id="Q2_1" name="Q2" value="0" >
+                                    <label for="Q2_1">是，他們曾說過</label>
+                                </div>
+                                </td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="sever" type="radio" id="Q2_4" name="Q2" value="3" >
+                                    <label for="Q2_4">否，他們沒有說過</label>
+                                  </div>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                              <td class="h5 text-gray-900 align-middle">5. 請問您想加入我們的系統，並更深入瞭解您自己是否有睡眠呼吸中止症嗎?</td>
+                              <td width="300">
+                              <div class="radio-toolbar">
+                                  <input class="never" type="radio" id="Q5_1" name="Q5" value="0" >
+                                  <label for="Q5_1">是，我想&#010;加入!</label>
+                              </div>
+                              </td>
+                              <td>
+                              <div class="radio-toolbar">
+                                  <input class="sever" type="radio" id="Q5_4" name="Q5" value="3" >
+                                  <label for="Q5_4">否，我不想(前往睡眠呼吸中止症衛教資訊平台)</label>
+                                </div>
+                              </td>
+                          </tr> -->
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">3. 與您同床者是否反應過你影響了他們的睡眠品質?</td>
+                                <td >
+                                <div class="radio-toolbar">
+                                    <input class="never" type="radio" id="Q3_1" name="Q3" value="0" >
+                                    <label for="Q3_1">是，他們曾說過</label>
+                                </div>
+                                </td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="sever" type="radio" id="Q3_4" name="Q3" value="3" >
+                                    <label for="Q3_4">否，他們沒有說過</label>
+                                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">4. 是否會從睡夢中驚醒?</td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="never" type="radio" id="Q4_1" name="Q4" value="0" >
+                                    <label for="Q4_1">會</label>
+                                  </div>
+                                </td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="sever" type="radio" id="Q4_4" name="Q4" value="3" >
+                                    <label for="Q4_4">不會</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">5. 請問您想加入我們的系統，並更深入瞭解您自己是否有睡眠呼吸中止症嗎?</td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="never" type="radio" id="Q5_1" name="Q5" value="0" >
+                                    <label for="Q5_1">是，我想加入!</label>
+                                </div>
+                                </td>
+                                <td>
+                                <div class="radio-toolbar">
+                                    <input class="sever" type="radio" id="Q5_4" name="Q5" value="3" >
+                                    <label for="Q5_4">否，我不想(前往睡眠呼吸中止症衛教資訊平台)</label>
+                                </div>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        <a href="/ess" type="button" class="btn-lg btn-primary float-right mr-3 mb-3">
+                          完成填寫</a>
+                        <!-- <button type="button" class="btn-lg btn-primary float-right mr-3 mb-3">完成填寫</button> -->
+                        <!-- <input type="button" value="calculate" onclick="getResult()" /> -->
+                    </form>
+                        </div>
+                    </div>
+               
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+
+
+    <script>
+        function getResult() {
+          var Q1 = document.getElementsByName('Q1');
+          var Q2 = document.getElementsByName('Q2');
+          var Q3 = document.getElementsByName('Q3');
+          var Q4 = document.getElementsByName('Q4');
+          var Q5 = document.getElementsByName('Q5');
+          var Q6 = document.getElementsByName('Q6');
+          var Q7 = document.getElementsByName('Q7');
+          var Q8 = document.getElementsByName('Q8');
+     
+          var total = 0;
+       
+          Q1.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+       
+          Q2.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q3.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q4.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q5.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q6.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q7.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q8.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          console.log("Total Marks=" + total);
+        }
+      </script>
+</body>
+
+</html>

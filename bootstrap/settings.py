@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-=dcc-i=21%h)xa(cd6lc=xcaum^=0&)+0f&v4iay#hfev*yx@#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['163.18.46.172', '127.0.0.1']
 
 
 # Application definition
@@ -79,8 +80,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    
+        # ========= MySQL =========
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'Health_platform', # 目標資料庫的名稱
+        # 'USER': 'root', # 資料庫帳號
+        # 'PASSWORD': 'lucas3195', # 資料庫密碼
+        # 'HOST': 'localhost', # 主機位置，可以先測本地localhost
+        # 'PORT': '3306', # 設定連接埠
     }
 }
+
 
 
 # Password validation
@@ -128,3 +138,13 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads/')
 MEDIA_URL = '/uploads/'
+
+
+# messages bootstrap style
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include "head_part.html" %}
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        
+                        <table class="table text-gray-900">
+                            <tr>
+                                <h1 class="h1 text-gray-900 mt-5 mb-5 text-center">愛普沃斯嗜睡量表(Epworth sleepiness Scale, ESS)</h1>
+                                <td class="h5 font-weight-bold text-gray-900">請根據您最近的生活，<br>評量以下幾種情況中 會打瞌睡或睡著的機會<br>若您從未有過其中的一些狀況，<br>也請盡量選最接近的答案</td>
+                                <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</td>
+                                <td class="h5 font-weight-bold align-middle justify-content-center text-gray-900">大多能維持清醒</td>
+                                <td class="h5 font-weight-bold  align-middle text-gray-900">可能維持清醒</td>
+                                <td class="h5 font-weight-bold align-middle text-gray-900">較少維持清醒</td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">1. 靜靜坐著閱讀，是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q1_1" name="Q1" value="0" onclick="getResult()">
+                                    <label for="Q1_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q1_2" name="Q1" value="1" onclick="getResult()">
+                                    <label for="Q1_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q1_3" name="Q1" value="2" onclick="getResult()">
+                                    <label for="Q1_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q1_4" name="Q1" value="3" onclick="getResult()">
+                                    <label for="Q1_4">高度</label>
+                                 </div>
+                                </td>
+                              
+                            
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">2. 白天看電視時，是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q2_1" name="Q2" value="0"  onclick="getResult()" >
+                                    <label for="Q2_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q2_2" name="Q2" value="1" onclick="getResult()">
+                                    <label for="Q2_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q2_3" name="Q2" value="2" onclick="getResult()">
+                                    <label for="Q2_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q2_4" name="Q2" value="3" onclick="getResult()">
+                                    <label for="Q2_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">3. 在公眾場合安靜坐著<br>（如在戲院或會議中）是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q3_1" name="Q3" value="0" onclick="getResult()" >
+                                    <label for="Q3_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q3_2" name="Q3" value="1" onclick="getResult()">
+                                    <label for="Q3_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q3_3" name="Q3" value="2" onclick="getResult()">
+                                    <label for="Q3_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q3_4" name="Q3" value="3" onclick="getResult()">
+                                    <label for="Q3_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">4. 連續坐一個小時的公車或汽車<br>（不包含自己開車）是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q4_1" name="Q4" value="0" onclick="getResult()">
+                                    <label for="Q4_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q4_2" name="Q4" value="1" onclick="getResult()">
+                                    <label for="Q4_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q4_3" name="Q4" value="2" onclick="getResult()">
+                                    <label for="Q4_3">中度</label>
+
+                                    <input class="sever" type="radio" id="Q4_4" name="Q4" value="3" onclick="getResult()">
+                                    <label for="Q4_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">5. 在下午躺下休息時，是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q5_1" name="Q5" value="0" onclick="getResult()">
+                                    <label for="Q5_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q5_2" name="Q5" value="1" onclick="getResult()">
+                                    <label for="Q5_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q5_3" name="Q5" value="2" onclick="getResult()">
+                                    <label for="Q5_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q5_4" name="Q5" value="3" onclick="getResult()">
+                                    <label for="Q5_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">6. 坐著跟人談話時，是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q6_1" name="Q6" value="0" onclick="getResult()">
+                                    <label for="Q6_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q6_2" name="Q6" value="1" onclick="getResult()">
+                                    <label for="Q6_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q6_3" name="Q6" value="2" onclick="getResult()">
+                                    <label for="Q6_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q6_4" name="Q6" value="3" onclick="getResult()">
+                                    <label for="Q6_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">7. 在午餐後，雖然未喝酒，靜靜坐著<br>&nbsp;&nbsp;&nbsp;&nbsp;是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">
+                                
+                                    <input class="never" type="radio" id="Q7_1" name="Q7" value="0" onclick="getResult()">
+                                    <label for="Q7_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q7_2" name="Q7" value="1" onclick="getResult()">
+                                    <label for="Q7_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q7_3" name="Q7" value="2" onclick="getResult()">
+                                    <label for="Q7_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q7_4" name="Q7" value="3" onclick="getResult()">
+                                    <label for="Q7_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="h5 text-gray-900 align-middle">8. 當您開著車，在等紅綠燈時是否會睡著</td>
+                                <td colspan="4">
+                                <div class="radio-toolbar">                               
+                                    <input class="never" type="radio" id="Q8_1" name="Q8" value="0" onclick="getResult()">
+                                    <label for="Q8_1">從未</label>
+                                
+                                    <input class="few" type="radio" id="Q8_2" name="Q8" value="1" onclick="getResult()">
+                                    <label for="Q8_2">很少</label>
+                                
+                                    <input class="middle" type="radio" id="Q8_3" name="Q8" value="2" onclick="getResult()">
+                                    <label for="Q8_3">中度</label> 
+
+                                    <input class="sever" type="radio" id="Q8_4" name="Q8" value="3" onclick="getResult()">
+                                    <label for="Q8_4">高度</label>
+                                </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- <br> -->
+                        <!-- <button type="button" class="btn-lg btn-primary float-right mr-3"  onclick="getResult()" href="/index">完成填寫</button> -->
+                        <form action = "/index" method = "get">
+
+                          <!-- <a href="" type="submit" class="btn-lg btn-primary float-right mr-3">
+                            送出並完成註冊</a> -->
+                            <input type="submit" class="btn-lg btn-primary float-right mr-3" value="送出並完成註冊">
+                          <div class="form-group ">
+                            <label class="h2 text-gray-900 align-middle ml-3" for="customCheck">總分 :</label>
+                              <input class="col-sm-1" style="font-size: 30px;"
+                                    name="ess_total" id="ess_total"
+                                    value="0">
+                            </div>
+                            <!-- <input type="submit" value="OK"> -->
+                        </form>
+                        <!-- <form action = "" method = "get">
+                          <label for="your_name">Your name: </label>
+                          <input id="your_name" type="text" name="your_name">
+                          <input type="submit" value="OK">
+                      </form> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+                        
+                        
+                    </form>
+                    <br>
+                    
+                    <!-- <div class="h4 text-gray-800 align-middle ml-3">
+                      0-8分 &nbsp;&nbsp;睡眠品質頗為良好。</div>
+                    <div class="h4 text-gray-800 align-middle ml-3 mt-3">
+                      8-10分 &nbsp;&nbsp;偶爾會因為過度疲累，而有多睡情形，但仍須稍加留心。</div>
+                    <div class="h4 text-gray-800 align-middle ml-3 mt-3">
+                      10-12分 &nbsp;&nbsp;輕度嗜睡者，最好仔細觀察、紀錄生活作息，幫助自己尋找出嗜睡原因，避免情況越來越惡化。</div>
+                    <div class="h4 text-gray-800 align-middle ml-3 mt-3">
+                      12分以上 &nbsp;&nbsp;重度嗜睡者，無時無刻都昏昏欲睡的困擾，已影響到生活與外在表現，建議最好儘速就診，尋求專業醫師的協助。</div>
+                    <br>
+                    <div class="h6 text-gray-700 align-middle ml-3">＊中文ESS量表原始論文由陳濘宏主任發表於：＊<br>
+                      CHEN, Ning-Hung, et al. Validation of a Chinese version of the Epworth sleepiness scale. 
+                      Quality of Life Research, 2002, 11.8: 817-821.</div>
+                      <br>
+                    <div class="h5 text-gray-800 align-middle ml-3">＊＊這份自我評估只能作參考之用，如想得到準確分析，建議請教專科醫生了解更多。＊＊</div>
+                    <a href="http://web.csh.org.tw/web/cshmagazine/?p=4028" target="_blank" type="button" class="btn-lg font-weight-bold btn-success ml-3 mb-3">
+                      了解更多睡眠呼吸中止症資訊</a> -->
+                    
+                  </div>
+                    </div>
+               
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+
+
+    <script>
+        function getResult() {
+          var Q1 = document.getElementsByName('Q1');
+          var Q2 = document.getElementsByName('Q2');
+          var Q3 = document.getElementsByName('Q3');
+          var Q4 = document.getElementsByName('Q4');
+          var Q5 = document.getElementsByName('Q5');
+          var Q6 = document.getElementsByName('Q6');
+          var Q7 = document.getElementsByName('Q7');
+          var Q8 = document.getElementsByName('Q8');
+     
+          var total = 0;
+
+          var total_show = document.getElementById('ess_total')
+
+       
+          Q1.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+       
+          Q2.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q3.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q4.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q5.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q6.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q7.forEach((evnt) => {
+            if (evnt.checked) {
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+          Q8.forEach((evnt) => {
+            if (evnt.checked) { 
+              total = total + parseInt(evnt.value);
+              return;
+            }
+          });
+
+          
+          
+          console.log("Total Marks=" + total);
+          console.log(typeof total);
+          
+          total_show.value = total.toString();
+        
+        }
+      </script>
+</body>
+
+</html>

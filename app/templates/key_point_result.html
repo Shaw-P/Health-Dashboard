@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include "head_part.html" %}
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {% include "sidebar_part.html" %}
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+            {% include "topbar_part.html" %}
+ 
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 font-weight-bold">關節點移動軌跡偵測結果</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 mb-4">
+                            <h2 class="h4 mb-1  text-gray-800 font-weight-bold">人像關節點偵測-影像</h2>
+                            <video controls width="100%">
+                                <source src="../static/img/keyPoint_images/Result.mp4"
+                                        type="video/mp4">
+                                Sorry, your browser doesn't support embedded videos.
+                                </video>
+
+                            </div>
+                            <div class="col-xl-6 col-lg-6 mb-4">
+                                <h2 class="h4 mb-0 ml-3 text-gray-800 font-weight-bold">3D人物軌跡圖-圖片</h2>
+                                <img src="../static/img/keyPoint_images/Camera2_Trim1_3D.jpg" width="100%">
+                                </div> 
+                        
+                        </div>
+                    </div>
+                       
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 mb-4">
+                            <h2 class="h4 mb-0 ml-3 text-gray-800 font-weight-bold">靜態軌跡圖-圖片</h2>
+                            <img src="../static/img/keyPoint_images/Camera2_Trim1_Results.jpg" width="100%">
+                            </div>
+                        <div class="col-xl-6 col-lg-6 mb-4">
+                            <h2 class="h4 mb-0 ml-3 text-gray-800 font-weight-bold">動態軌跡圖-GIF</h2>
+                            <img src="../static/img/keyPoint_images/result_gif.gif" width="100%">
+                            </div>
+                        </div>
+
+                    
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+          {% include "footer_part.html" %}
+
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% include "modals_and_scripts_part.html" %}
+
+    <!-- Page level plugins -->
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/chart-area-demo.js"></script>
+    <script src="/static/js/demo/chart-pie-demo.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+
+</body>
+
+</html>

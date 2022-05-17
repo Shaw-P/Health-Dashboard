@@ -21,6 +21,19 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('<filename>.html', views.html),
-    path('', views.index),
+    # path('<filename>.html', views.html),
+    # path('', views.index),
+    path('', views.welcome, name='welcome'),
+    path('register', views.register, name='register'),
+    path('login', views.login, name='login'),
+    path('firstPage', views.first_page, name='first_page'),
+    path('ess', views.ess, name='ess'),
+    path('pretest', views.pretest, name='pretest'),
+    path('VoiceRecognition', views.VoiceRecognition, name='VoiceRecognition'),
+    path('index', views.index, name='index'),
+    path('index_2', views.index_2, name='index_2'),
+    path('index_3', views.index_3, name='index_3'),
+    path('importCsv', views.importCsv, name='importCsv'),
+    path('KeyPoint', views.KeyPoint, name='key_point'),
+    path('KeyPointResult', views.KeyPointResult, name='key_point_result'),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

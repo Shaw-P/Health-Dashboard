@@ -22,13 +22,13 @@
             <div id="content">
 
             {% include "topbar_part.html" %}
-
+ 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Health Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800 font-weight-bold">我的個人數據儀表板</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -37,14 +37,22 @@
                     <div class="row">
 
                         <!-- personal information -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-lg font-weight-bold text-primary mb-1">
-                                                Name</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">McGee</div>
+                                                嗜睡量表ESS</div>
+                                            {% csrf_token %}
+                                        <form action = "/index_2" method = "get">
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800" name="ess_total" id="ess_total" >
+                                                    {{ ess_total.0 }} 分</div>
+                                            <input style="display:none;"
+                                            name="ess_total" id="ess_total"
+                                            value= {{ ess_total.0|safe }}>
+
                                         </div>
                                         <div class="col-auto" style = "color: Dodgerblue">
                                             <i class="far fa-hospital fa-2x"></i>
@@ -54,15 +62,81 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Heart Rate -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+						<!-- personal information -->
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-primary mb-1">
+                                                BMI</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">31</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: Dodgerblue">
+                                            <i class="far fa-hospital fa-2x"></i>
+                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<!-- personal information -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-primary mb-1">
+                                                頸圍</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">22 公分</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: Dodgerblue">
+                                            <i class="far fa-hospital fa-2x"></i>
+                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        
+                        <div class="col-xl-4 col-lg-6 mb-4">  
+                            <!-- Time asleep -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary text-lg">我的睡眠概況</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class=" font-weight-bold text-lg">睡眠總時長<span
+                                        class="float-right"></span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%"
+                                            aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class=" font-weight-bold text-lg">打鼾次數<span
+                                        class="float-right">0 次/小時</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar" role="progressbar" style="width: 0%"
+                                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 mb-4">  
+                            <!-- Time asleep -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary text-lg"><br></h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center" style="line-height: 43.02px;">
+                                        <div class="col mr-2">
                                             <div class="text-lg font-weight-bold text-danger  mb-1">
-                                                Heart rate</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Average : 68 bpm</div>
+                                                血氧SpO2</div>
+                                            <div class="h5 mb-0 font-weight-bold">平均數值 : 尚無資料</div>
                                         </div>
                                         <div class="col-auto" style = "color: Tomato">
                                             <i class="fa fa-heartbeat fa-2x "></i>
@@ -70,182 +144,130 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center" style="line-height: 43.02px;">
+                                        <div class="col mr-2">
+                                            <div class="text-lg font-weight-bold text-danger  mb-1">
+                                                心率</div>
+                                            <div class="h5 mb-0 font-weight-bold">平均數值 : 尚無資料</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: Tomato;">
+                                            <i class="fa fa-heartbeat fa-2x "></i>
+                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 mb-4">  
+                            <!-- Time asleep -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary text-lg">我的睡眠呼吸中止症風險評估</h6>
+                                </div>  
+                                <div class="card-body">
+                                    <d  iv class="row no-gutters align-items-center">
+                                        <div class="col mr-1">
+                                            <div class="text-lg font-weight-bold">
+                                                ESS</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: rgba(0, 128, 11, 0.808)">
+                                            <i class="fa fa-circle  fa-2x "></i>
+                                        </div>  
+                                    </div>
+                                
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-1">
+                                            <div class="text-lg font-weight-bold text-danger">
+                                                BMI</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: Tomato">
+                                            <i class="fa fa-circle  fa-2x "></i>
+                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-1">
+                                            <div class="text-lg font-weight-bold text-danger">
+                                                頸圍</div>
+                                        </div>
+                                        <div class="col-auto" style = "color: Tomato">
+                                            <i class="fa fa-circle  fa-2x "></i>
+                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                    <button type="button" style = "display:none" class="btn-lg font-weight-bold btn-success ml-3 mr-3 mb-2">
+                                        點選我看詳細評估
+                                    </button>   
+                                
                             </div>
                         </div>
                     </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <!-- <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <!-- <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- Pending Requests Card Example -->
-                        <!-- <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!--SpO2 Area Chart -->
-                        <div class="col-xl-12 col-lg-11">
-                        <!-- <div class=".col-md-12"> -->
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary text-lg">Spo2 / SaO2</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="SaO2Chart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--SpO2 Area Chart -->
-                        <div class="col-xl-8 col-lg-6">
-                            <!-- <div class=".col-md-12"> -->
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary text-lg">Audio</h6>
-                                        <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                                aria-labelledby="dropdownMenuLink">
-                                                <div class="dropdown-header">Dropdown Header:</div>
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-area">
-                                            <canvas id="AudioChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- Content Column -->
-                            <div class="col-xl-4 col-lg-6 mb-4">  
-                                <!-- Time asleep -->
-                                <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary text-lg">Sleep quality</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 class=" font-weight-bold text-lg">Time asleep<span
-                                            class="float-right">6h 33m</span></h4>
-                                        <div class="progress mb-4">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 68%"
-                                                aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 mb-4">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary text-lg">請上傳您睡眠時的錄音檔</h6>
                                         </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 class=" font-weight-bold text-lg">Snoring Time<span
-                                            class="float-right">5</span></h4>
-                                        <div class="progress mb-4">
-                                            <div class="progress-bar" role="progressbar" style="width: 10%"
-                                                aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 class=" font-weight-bold text-lg">Quality<span
-                                            class="float-right">60%</span></h4>
-                                        <div class="progress mb-4">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 60%"
-                                                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" 
+                                                    width="100" class="d-block mx-auto mb-4 rounded-pill">
+                                                </div>
+                                            <div class="custom-file rounded-pill mb-5">
+                                                <label for="formFile" class=""></label>
+                                                <input class="form-control" type="file" id="formFile">
+                                                </div>
+                                                <div class="text-center">
+                                                <button type="button" class="btn-lg btn-success ml-3 mb-3">確認上傳</button> 
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="col-xl-4 col-lg-6 mb-4">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary text-lg">請上傳您智慧手錶(穿戴式裝置)的資料</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" 
+                                                    width="100" class="d-block mx-auto mb-4 rounded-pill">
+                                                </div>
+                                            <div class="custom-file rounded-pill mb-5">
+                                                <label for="formFile" class=""></label>
+                                                <input class="form-control" type="file" id="formFile">
+                                                <!-- <input id="customFile" type="file" class="custom-file-input rounded-pill" name="uploadFile">
+                                                <label for="customFile" class="custom-file-label rounded-pill">請選擇檔案</label> -->
+                                                </div>
+                                                <div class="text-center">
+                                                    <!-- <a href="/VoiceRecognition" type="button" class="btn-lg btn-success ml-3 mb-3">
+                                                        確認上傳 </a> -->
+                                                    <input onclick="popUp()" type="submit" class="btn-lg btn-success ml-3 mb-3" value="確認上傳">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                 
+                        </div>
                         
+
+                    <!-- Upload wav end -->
                         <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
+                        <!-- <div class="col-xl-4 col-lg-5"> -->
                         <!-- <div class=".col-md-12"> -->
-                            <div class="card shadow mb-4">
+                            <!-- <div class="card shadow mb-4"> -->
                                 <!-- Card Header - Dropdown -->
-                                <div
+                                <!--<div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                                     <div class="dropdown no-arrow">
@@ -262,9 +284,9 @@
                                             <a class="dropdown-item" href="#">Something else here</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- Card Body -->
-                                <div class="card-body">
+                                <!--<div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
@@ -279,10 +301,10 @@
                                             <i class="fas fa-circle text-info"></i> Referral
                                         </span>
                                     </div>
-                                </div>
-                            </div>
+                                </div>-->
+                            <!-- </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Content Row -->
                     <div class="row">
@@ -291,7 +313,7 @@
                         <div class="col-lg-4 mb-4">
 
                             <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
+                            <!--<div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
                                 </div>
@@ -327,7 +349,7 @@
                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <!-- Color System
                             <div class="row">
@@ -421,7 +443,7 @@
                             </div> -->
 
                             <!-- Approach -->
-                            <div class="card shadow mb-4">
+                            <!--<div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
                                 </div>
@@ -432,7 +454,7 @@
                                     <p class="mb-0">Before working with this theme, you should become familiar with the
                                         Bootstrap framework, especially the utility classes.</p>
                                 </div>
-                            </div>
+                            </div>-->
 
                         </div>
                     </div>
@@ -471,24 +493,24 @@
     // SpO2 / SaO2 Chart
         var ctx = document.getElementById("SaO2Chart");
         var myLineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: {{ labels|safe }},
-            datasets: [{
-            label: "SpO2 / SaO2",
-            lineTension: 0.3,
-            backgroundColor: "rgba(78, 115, 223, 0.05)",
-            borderColor: "rgba(78, 115, 223, 1)",
-            pointRadius: 3,
-            pointBackgroundColor: "rgba(78, 115, 223, 1)",
-            pointBorderColor: "rgba(78, 115, 223, 1)",
-            pointHoverRadius: 3,
-            pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-            pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-            pointHitRadius: 10,
-            pointBorderWidth: 2,
-            data: {{ spo2_data|safe }},
-            }],
+            type: 'line',
+            data: {
+                labels: {{ labels|safe }},
+                datasets: [{
+                label: "SpO2 / SaO2",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: {{ spo2_data|safe }},
+                }],
         },
         options: {
             maintainAspectRatio: false,
@@ -556,8 +578,14 @@
             }
         }
         });
-
     </script>
+
+    <script type="text/javascript">
+        function popUp() {
+            alert("您的血氧SpO2及心率數值已更新");
+        }
+            </script>
+
         <script type="text/javascript">
         // Area Chart Example
         var ctx = document.getElementById("AudioChart");

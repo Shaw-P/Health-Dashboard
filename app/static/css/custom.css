@@ -1,0 +1,130 @@
+label#btn_0:focus
+{
+    background:#98e6ab;
+    border-color: #ffffff00;
+    
+}
+button#btn_0:hover
+{
+    background:#98e6ab;
+    border-color: #ffffff00;
+    
+}
+button#btn_1:focus
+{
+    background:#ffd24d;
+    border-color: #ffffff00;
+    
+}
+button#btn_1:hover
+{
+    background:#ffd24d;
+    border-color: #ffffff00;
+    
+}
+
+button#btn_2:focus
+{
+    background:#ff80ecb5;
+    border-color: #ffffff00;
+    
+}
+button#btn_2:hover
+{
+    background:#ff80ecb5;
+    border-color: #ffffff00;
+    
+}
+
+button#btn_3:focus
+{
+    background:#e62e4089;
+    border-color: #ffffff00;
+    
+}
+button#btn_3:hover
+{
+    background:#e62e4089;
+    border-color: #ffffff00;
+    
+}
+
+
+
+/* .radio-toolbar {
+    margin: 20px;
+  } */
+  
+  .radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  
+  .radio-toolbar label {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 17px;
+      border: 2px solid #444;
+      border-radius: 4px;
+      margin-inline: 39px;
+  }
+
+/* check style */
+  .radio-toolbar input[class="never"]:checked + label {
+    border: 2px dashed #666;
+    background-color: #98e6ab;
+}
+.radio-toolbar input[class="few"]:checked + label {
+    border: 2px dashed #666;
+    background-color: #ffd24d;
+}
+.radio-toolbar input[class="middle"]:checked + label {
+    border: 2px dashed #666;
+    background-color: #ff80ecb5;
+}
+.radio-toolbar input[class="sever"]:checked + label {
+    border: 2px dashed #666;
+    background-color: #e62e4089;
+}
+/* hover style */
+.radio-toolbar input[class="never"]:hover + label {
+    border: 2px dashed #666;
+    background-color: #98e6ab;
+}
+.radio-toolbar input[class="few"]:hover + label {
+    border: 2px dashed #666;
+    background-color: #ffd24d;
+}
+.radio-toolbar input[class="middle"]:hover + label {
+    border: 2px dashed #666;
+    background-color: #ff80ecb5;
+}
+.radio-toolbar input[class="sever"]:hover + label {
+    border: 2px dashed #666;
+    background-color: #e62e4089;
+}
+/* focus style */
+.radio-toolbar input[class="never"]:focus + label {
+    border: 2px dashed #666;
+    background-color: #98e6ab;
+}
+.radio-toolbar input[class="few"]:focus + label {
+    border: 2px dashed #666;
+    background-color: #ffd24d;
+}
+.radio-toolbar input[class="middle"]:focus + label {
+    border: 2px dashed #666;
+    background-color: #ff80ecb5;
+}
+.radio-toolbar input[class="sever"]:focus + label {
+    border: 2px dashed #666;
+    background-color: #e62e4089;
+}
+
+/* Bootstrap custom */
+.mt-6 {
+    margin-top: 5rem !important
+}

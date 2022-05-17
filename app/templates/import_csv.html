@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include "head_part.html" %}
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {% include "sidebar_part.html" %}
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+            {% include "topbar_part.html" %}
+ 
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 font-weight-bold">我的睡眠呼吸中止症判斷結果</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+                    <!-- <h3 class="h3 mb-0 text-gray-900">根據混合式的聲音辨識模型搭配智慧手環的生理資訊所產生之判斷結果(供參考)</h3> -->  
+                    <br><br>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="h4 font-weight-bold" scope="col">項目</th>
+                            <th class="h4 font-weight-bold" scope="col">我的數值</th>
+                            <th class="h4 font-weight-bold" scope="col">標準數值</th>
+                            <th class="h4 font-weight-bold" scope="col">風險</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class="h4" scope="row">嗜睡量表ESS</th>
+                            <td class="h4">{{ ess_total.0 }}</td>
+                            <td class="h4">8 以內（包含8）</td>
+                            <td style="text-align:left; font-size:150%; font-weight:bold;"><td>
+                          </tr>
+                          <tr>
+                            <th class="h4" scope="row">BMI</th>
+                            <td class="h4">31</td>
+                            <td class="h4">24 以內（包含24）</td>
+                            <td style="text-align:left; font-size:150%; font-weight:bold; color:red;">&#8226;</td>
+                          </tr>
+                          <tr>
+                            <th class="h4" scope="row">血氧SpO2</th>
+                            <td class="h4">97</td>
+                            <td class="h4">95 以上</td>
+                            <td style="text-align:left; font-size:150%"></td>
+                          </tr>
+                          <tr>
+                            <th class="h4" scope="row">打鼾次數</th>
+                            <td class="h4">每小時 5 次</td>
+                            <td class="h4">每小時 30 次內</td>
+                            <td style="text-align:left; font-size:150%; font-weight:bold; color:red;">&#8226;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        <br><br>
+                        <div class="h5 text-gray-800 align-middle ml-3">
+                            ＊＊1. 嗜睡量表ESS，9分或以上為高風險族群可性度來源（台灣精神醫學2003）＊＊
+                            </div>
+                        <div class="h5 text-gray-800 align-middle ml-3">
+                            ＊＊2. BMI >= 25，約有33.3%併存在阻塞性睡眠呼吸中止症，BMI >= 50，約有76.7%併存阻塞性睡眠呼吸中止症，可性度來源（成大醫院睡眠醫學中心全球資訊網）＊＊
+                            </div>
+                        <div class="h5 text-gray-800 align-middle ml-3">
+                            ＊＊3. 正常人血氧濃度需95%以上，血氧濃度低於94%則有潛在風險，可性度來源（奇美醫院134期醫訊）＊＊
+                            </div>
+                        <div class="h5   text-gray-800 align-middle ml-3">
+                            ＊＊4. 打鼾次數透過類神經網路（Neural Network）模型判斷睡眠時的聲音檔，約有75%準確度（Xie et al., 2021, Audio-based snore detection using deep neural networks）＊＊
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+          {% include "footer_part.html" %}
+
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% include "modals_and_scripts_part.html" %}
+
+    <!-- Page level plugins -->
+    <script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/chart-area-demo.js"></script>
+    <script src="/static/js/demo/chart-pie-demo.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+
+</body>
+
+</html>
