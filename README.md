@@ -2,5 +2,3 @@
 Health Management System
 
 
-## /ess     ESS問卷量表
-
