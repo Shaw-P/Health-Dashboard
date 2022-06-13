@@ -6,11 +6,11 @@
 ## Get started
 python manage.py runserver
 ## Introduction
-* /firstPage -> (register/unregister)
+* /firstPage -> (Register/Unregister)
 <first_page.html>
 * /register -> Register Page
 <register.html>
-* /login -> 登入
+* /login -> Login
 <login.html>
 * /pretest -> Medical platform willingness survey
 <pretest.html>
@@ -18,7 +18,7 @@ python manage.py runserver
 <ess.html>
 * /index -> Daahboard
 <index.html>
-* /VoiceRecognition -> sleep apnea diagnosis
+* /VoiceRecognition -> Sleep apnea diagnosis
 <import_csv.html>
 * /KeyPointResult -> Keypoints result
 <key_point_result.html>
