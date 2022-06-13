@@ -22,3 +22,12 @@ python manage.py runserver
 <import_csv.html>
 * /KeyPointResult -> Keypoints result
 <key_point_result.html>
+
+## Tools
+* Django
+* MySQL
+* Html/Css/Js
+* Jquery
+* Bootstrap
+* Font-awesome
+* [Google Fonts](https://fonts.google.com/)
